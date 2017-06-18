@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let yellow = UIColor(red:1.00, green:1.00, blue:0.32, alpha:1.0)
+
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: yellow], for: .selected)
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
+        
         return true
     }
 

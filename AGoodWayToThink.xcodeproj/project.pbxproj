@@ -16,10 +16,14 @@
 		665B82891EEDABF0007FCC06 /* ElementCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665B82881EEDABF0007FCC06 /* ElementCollectionViewController.swift */; };
 		665B828B1EEDB4B9007FCC06 /* HappinessElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665B828A1EEDB4B9007FCC06 /* HappinessElement.swift */; };
 		665B828D1EEDB509007FCC06 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665B828C1EEDB509007FCC06 /* User.swift */; };
-		665B828F1EEDC129007FCC06 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665B828E1EEDC129007FCC06 /* SurveyViewController.swift */; };
 		66AD09801EF6861500CB6A21 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD097F1EF6861500CB6A21 /* OnboardingViewController.swift */; };
 		66AD09821EF686E900CB6A21 /* OboardingQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD09811EF686E900CB6A21 /* OboardingQuestionView.swift */; };
 		66AD09871EF6875300CB6A21 /* OboardingQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66AD09861EF6875300CB6A21 /* OboardingQuestionView.xib */; };
+		66AD09891EF6C26E00CB6A21 /* OnboardingIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD09881EF6C26E00CB6A21 /* OnboardingIntroViewController.swift */; };
+		66AD098B1EF6C2B300CB6A21 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD098A1EF6C2B300CB6A21 /* UIStoryboard.swift */; };
+		66AD098E1EF6C2CA00CB6A21 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD098D1EF6C2CA00CB6A21 /* UICollectionView.swift */; };
+		66AD09921EF6DD1900CB6A21 /* SelfAssessmentQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD09911EF6DD1900CB6A21 /* SelfAssessmentQuestions.swift */; };
+		66AD09941EF70D2D00CB6A21 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AD09931EF70D2D00CB6A21 /* MainTabViewController.swift */; };
 		F61736713136016322229CCD /* Pods_AGoodWayToThink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12CA6F37186F572C3D44C9F2 /* Pods_AGoodWayToThink.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,10 +40,14 @@
 		665B82881EEDABF0007FCC06 /* ElementCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementCollectionViewController.swift; sourceTree = "<group>"; };
 		665B828A1EEDB4B9007FCC06 /* HappinessElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappinessElement.swift; sourceTree = "<group>"; };
 		665B828C1EEDB509007FCC06 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		665B828E1EEDC129007FCC06 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		66AD097F1EF6861500CB6A21 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		66AD09811EF686E900CB6A21 /* OboardingQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OboardingQuestionView.swift; path = Views/OboardingQuestionView.swift; sourceTree = "<group>"; };
 		66AD09861EF6875300CB6A21 /* OboardingQuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OboardingQuestionView.xib; sourceTree = "<group>"; };
+		66AD09881EF6C26E00CB6A21 /* OnboardingIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingIntroViewController.swift; sourceTree = "<group>"; };
+		66AD098A1EF6C2B300CB6A21 /* UIStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		66AD098D1EF6C2CA00CB6A21 /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		66AD09911EF6DD1900CB6A21 /* SelfAssessmentQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfAssessmentQuestions.swift; sourceTree = "<group>"; };
+		66AD09931EF70D2D00CB6A21 /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		E82AB547DB0421D63E7ADF01 /* Pods-AGoodWayToThink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGoodWayToThink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGoodWayToThink/Pods-AGoodWayToThink.debug.xcconfig"; sourceTree = "<group>"; };
 		FCF3F2FF2D2ECC83B5F75F80 /* Pods-AGoodWayToThink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGoodWayToThink.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGoodWayToThink/Pods-AGoodWayToThink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,9 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				665B82741EEDA7A8007FCC06 /* AppDelegate.swift */,
+				66AD098C1EF6C2B600CB6A21 /* UIExtensions */,
 				66AD09851EF6873000CB6A21 /* Storyboard */,
 				665B82911EEEEA52007FCC06 /* Model */,
 				665B82901EEEEA48007FCC06 /* ViewControllers */,
+				665B82781EEDA7A8007FCC06 /* SecondViewController.swift */,
 				66AD09841EF686F100CB6A21 /*  UISubclasses */,
 				665B827D1EEDA7A8007FCC06 /* Assets.xcassets */,
 				665B827F1EEDA7A8007FCC06 /* LaunchScreen.storyboard */,
@@ -100,11 +110,8 @@
 		665B82901EEEEA48007FCC06 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				665B82881EEDABF0007FCC06 /* ElementCollectionViewController.swift */,
-				665B82761EEDA7A8007FCC06 /* TheGymViewController.swift */,
-				665B82781EEDA7A8007FCC06 /* SecondViewController.swift */,
-				665B828E1EEDC129007FCC06 /* SurveyViewController.swift */,
-				66AD097F1EF6861500CB6A21 /* OnboardingViewController.swift */,
+				66AD09901EF6C8BA00CB6A21 /* TheGym */,
+				66AD098F1EF6C8A100CB6A21 /* Onboarding */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				665B828A1EEDB4B9007FCC06 /* HappinessElement.swift */,
+				66AD09911EF6DD1900CB6A21 /* SelfAssessmentQuestions.swift */,
 				665B828C1EEDB509007FCC06 /* User.swift */,
 			);
 			name = Model;
@@ -141,6 +149,34 @@
 				665B827A1EEDA7A8007FCC06 /* Main.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		66AD098C1EF6C2B600CB6A21 /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				66AD098D1EF6C2CA00CB6A21 /* UICollectionView.swift */,
+				66AD098A1EF6C2B300CB6A21 /* UIStoryboard.swift */,
+			);
+			name = UIExtensions;
+			sourceTree = "<group>";
+		};
+		66AD098F1EF6C8A100CB6A21 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				66AD09881EF6C26E00CB6A21 /* OnboardingIntroViewController.swift */,
+				66AD097F1EF6861500CB6A21 /* OnboardingViewController.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		66AD09901EF6C8BA00CB6A21 /* TheGym */ = {
+			isa = PBXGroup;
+			children = (
+				665B82761EEDA7A8007FCC06 /* TheGymViewController.swift */,
+				66AD09931EF70D2D00CB6A21 /* MainTabViewController.swift */,
+				665B82881EEDABF0007FCC06 /* ElementCollectionViewController.swift */,
+			);
+			name = TheGym;
 			sourceTree = "<group>";
 		};
 		A695CD23FB792DD80EE0E0E6 /* Pods */ = {
@@ -277,11 +313,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66AD098B1EF6C2B300CB6A21 /* UIStoryboard.swift in Sources */,
+				66AD09891EF6C26E00CB6A21 /* OnboardingIntroViewController.swift in Sources */,
 				665B82791EEDA7A8007FCC06 /* SecondViewController.swift in Sources */,
-				665B828F1EEDC129007FCC06 /* SurveyViewController.swift in Sources */,
 				665B82891EEDABF0007FCC06 /* ElementCollectionViewController.swift in Sources */,
 				66AD09801EF6861500CB6A21 /* OnboardingViewController.swift in Sources */,
+				66AD098E1EF6C2CA00CB6A21 /* UICollectionView.swift in Sources */,
+				66AD09941EF70D2D00CB6A21 /* MainTabViewController.swift in Sources */,
 				665B828D1EEDB509007FCC06 /* User.swift in Sources */,
+				66AD09921EF6DD1900CB6A21 /* SelfAssessmentQuestions.swift in Sources */,
 				665B828B1EEDB4B9007FCC06 /* HappinessElement.swift in Sources */,
 				66AD09821EF686E900CB6A21 /* OboardingQuestionView.swift in Sources */,
 				665B82751EEDA7A8007FCC06 /* AppDelegate.swift in Sources */,

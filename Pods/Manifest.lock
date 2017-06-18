@@ -1,0 +1,15 @@
+PODS:
+  - Hero (0.1.2)
+  - PureLayout (3.0.2)
+
+DEPENDENCIES:
+  - Hero
+  - PureLayout
+
+SPEC CHECKSUMS:
+  Hero: 1465b8e2ca4224620d17d09044728dbbe5c08b7a
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+
+PODFILE CHECKSUM: 1bd058ed0892d52a1aa69099da8e741fc13a63bc
+
+COCOAPODS: 1.1.1

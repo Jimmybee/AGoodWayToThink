@@ -11,62 +11,84 @@ import PureLayout
 
 class OnboardingViewController: UIViewController {
 
-    /// Create scrollView. Pin to superview
-    /// Horizontal stackview. Pin to superview.
+    /// Create scrollView. Pin to supervievar   /// Horizontal stackview. Pin to superview.
     /// Create arranged views. Equal width to View. equal Height to view.
+
+    var questions = SelfAssessmentQuestions.AllQuestions()
+    var questionViews = [OboardingQuestionView]()
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var onTopView: UIView!
+    @IBOutlet weak var pageIndicator: UIPageControl!
+    @IBOutlet weak var nextBttn: UIButton!
+    @IBOutlet weak var slider: UISlider!
+
     
     fileprivate(set) lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.isScrollEnabled = false
+        scrollView.isPagingEnabled = true
+        scrollView.delegate = self
         return scrollView
     }()
     
     fileprivate(set) lazy var scrollStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
-        stack.distribution = .fillEqually
+        stack.distribution = .fill
         return stack
     }()
     
     
-    fileprivate(set) lazy var pageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        pageControl.tintColor = .white
-        return pageControl
-    }()
-    
-    fileprivate(set) lazy var nextButton: UIButton = {
-        let nextButton = UIButton()
-        return nextButton
-    }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let allViews = [nextBttn, titleLabel, onTopView, scrollView, pageIndicator]
+        allViews.forEach({ $0?.alpha = 0})
+        UIView.animate(withDuration: 0.3) {
+            allViews.forEach({ $0?.alpha = 1})
+        }
         
         view.addSubview(scrollView)
         scrollView.autoPinEdgesToSuperviewEdges()
         scrollView.addSubview(scrollStack)
         scrollStack.autoPinEdgesToSuperviewEdges()
         
-        let view1 = OboardingQuestionView.storyboardInit(owner: self)
-        let view2 = OboardingQuestionView.storyboardInit(owner: self)
         
-        let views = [view1, view2]
-        
-        views.forEach { (view) in
-            scrollStack.addArrangedSubview(view)
-            view.autoMatch(.width, to: .width, of: view)
+        questionViews = questions.map { (question) -> OboardingQuestionView in
+            return OboardingQuestionView.storyboardInit(owner: self, question: question)
         }
         
-        view1.autoMatch(.height, to: .height, of: view)
+        for (index, questionView) in questionViews.enumerated() {
+            scrollStack.addArrangedSubview(questionView)
+            questionView.autoMatch(.width, to: .width, of: view)
+            questionView.questionLabel.text = questions[index].question
+        }
         
-        view.addSubview(pageControl)
-        view.bringSubview(toFront: pageControl)
-        pageControl.numberOfPages = 6
-        pageControl.autoPinEdge(.bottom, to: .bottom, of: scrollStack)
-        pageControl.autoAlignAxis(toSuperviewAxis: .vertical)
+        
+        questionViews[0].autoMatch(.height, to: .height, of: view)
+        
+        view.bringSubview(toFront: onTopView)
+        view.bringSubview(toFront: nextBttn)
+        
+        setupPageControl()
 
+    }
+    
+    func setupPageControl() {
+        pageIndicator.numberOfPages = questionViews.count
+    }
+    
+    @IBAction func nextTapped(_ sender: UIButton) {
+        let pageWidth = view.bounds.size.width
+        let currentOffset = scrollView.contentOffset
+        let newOffset = CGPoint(x: currentOffset.x + pageWidth, y: 0)
+        scrollView.setContentOffset(newOffset, animated: true)
+
+    }
+    
+    func doneTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,4 +97,38 @@ class OnboardingViewController: UIViewController {
     }
     
 
+}
+
+extension OnboardingViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let newPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.size.width)
+        
+        if newPage > (pageIndicator.currentPage - 1) {
+            updateModel(questionNumber: pageIndicator.currentPage)
+        } else {
+            updateSlider(questionNumber: newPage)
+        }
+        
+        pageIndicator.currentPage = newPage
+        if pageIndicator.currentPage == questionViews.count - 1 {
+            nextBttn.setTitle("Done", for: .normal)
+            nextBttn.removeTarget(self, action: #selector(nextTapped(_:)), for: .touchUpInside)
+            nextBttn.addTarget(self, action: #selector(doneTapped(_:)), for: .touchUpInside)
+        } else {
+            nextBttn.setTitle("Next", for: .normal)
+            nextBttn.removeTarget(self, action: #selector(doneTapped(_:)), for: .touchUpInside)
+            nextBttn.addTarget(self, action: #selector(nextTapped(_:)), for: .touchUpInside)
+        }
+        
+        
+    }
+    
+    func updateSlider(questionNumber: Int) {
+        slider.value = Float(questions[questionNumber].score)
+    }
+    
+    func updateModel(questionNumber: Int) {
+        questions[questionNumber].score = Int(slider.value)
+    }
 }

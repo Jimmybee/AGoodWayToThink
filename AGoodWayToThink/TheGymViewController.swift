@@ -11,8 +11,8 @@ import UIKit
 class TheGymViewController: UIViewController {
 
     @IBOutlet weak var healthyPerspective: UIButton!
-    @IBOutlet weak var lovingConnectionsImage: UIImageView!
-    @IBOutlet weak var lifeAlignedToValuesImage: UIImageView!
+    @IBOutlet weak var lovingConnections: UIButton!
+    @IBOutlet weak var lifeAlignedToValues: UIButton!
     @IBOutlet weak var liveNowMindfully: UIButton!
     @IBOutlet weak var gratefulMindset: UIButton!
     @IBOutlet weak var positiveThoughts: UIButton!
@@ -22,10 +22,14 @@ class TheGymViewController: UIViewController {
         super.viewDidLoad()
         setupNewUser()
 //        updateElementColours()
-        buttons = [healthyPerspective, liveNowMindfully, gratefulMindset, positiveThoughts]
+        buttons = [lifeAlignedToValues, lovingConnections, healthyPerspective, liveNowMindfully, gratefulMindset, positiveThoughts]
         
-        addImageGestureTaps()
         addButtonTargets()
+        
+//        self.tabBarItem.setTitleTextAttributes(<#T##attributes: [String : Any]?##[String : Any]?#>, for: <#T##UIControlState#>)
+
+//       performSegue(withIdentifier: "OnboardNav", sender: self)
+        
     }
     
     func setupNewUser() {
@@ -39,8 +43,8 @@ class TheGymViewController: UIViewController {
     func updateElementColours() {
         for element in User.user.happinessElements {
             switch element.type {
-            case .LovingConnections:
-                lovingConnectionsImage.tintColor =  element.score > 5 ? .red : .blue
+//            case .LovingConnections:
+//                lovingConnectionsImage.tintColor =  element.score > 5 ? .red : .blue
             case .HealthyPerspective:
                 healthyPerspective.backgroundColor = .yellow
             default:
@@ -49,18 +53,11 @@ class TheGymViewController: UIViewController {
         }
     }
     
-    func addImageGestureTaps() {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
-        lifeAlignedToValuesImage.addGestureRecognizer(gesture)
-        let anotherGesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
-        lovingConnectionsImage.addGestureRecognizer(anotherGesture)
-    }
-    
     func addButtonTargets() {
         buttons.forEach({ (button) in
 //            button.layer.cornerRadius = 8
-            button.layer.borderColor = UIColor.lightGray.cgColor
-            button.layer.borderWidth = 1
+//            button.layer.borderColor = UIColor.lightGray.cgColor
+//            button.layer.borderWidth = 1
             button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         })
     }

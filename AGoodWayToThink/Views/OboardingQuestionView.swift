@@ -10,16 +10,17 @@ import UIKit
 
 class OboardingQuestionView: UIView {
 
-    static func storyboardInit(owner: UIViewController) -> OboardingQuestionView {
+    static func storyboardInit(owner: UIViewController, question: SelfAssessmentQuestion) -> OboardingQuestionView {
         let bundle = Bundle(for: OboardingQuestionView.self)
         let nib = bundle.loadNibNamed(self.nib, owner: owner, options: nil)
         let view = nib?.first as? OboardingQuestionView
+        view!.question = question
         return view!
     }
     static var nib = "OboardingQuestionView"
-
+    var question: SelfAssessmentQuestion!
+    
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var slider: UISlider!
     
     override init(frame:CGRect) {
         super.init(frame:frame)
@@ -30,7 +31,7 @@ class OboardingQuestionView: UIView {
     }
     
     override func awakeFromNib() {
-        
+
     }
     
 

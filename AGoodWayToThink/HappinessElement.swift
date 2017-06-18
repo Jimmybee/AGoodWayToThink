@@ -42,6 +42,7 @@ enum HappinessElementType: Int {
             return "Postitive Thoughts"
         }
     }
+    
 }
 
 protocol ElementComponent {
